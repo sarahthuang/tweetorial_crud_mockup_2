@@ -684,5 +684,12 @@ def getnondeleted():
 def annotate():
     return render_template('annotate.html')
 
+def savetweets():
+    ts = datetime.datetime.now().timestamp()
+    o = "./backup/" + repr(ts) + ".txt"
+    out_file = open(o, "w")
+    out_file.write(json.dumps(leads))
+    out_file.close()
+    
 if __name__ == '__main__':
    app.run(debug = True)
