@@ -2,6 +2,7 @@ from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
 from flask_cors import CORS
+import get_tweet
 
 app = Flask(__name__)
 CORS(app)
@@ -59,6 +60,25 @@ def view(id):
 @app.route('/create')
 def create():
     return render_template('create.html')
+
+@app.route('/create_prefill')
+def create_prefill():
+    return render_template('create_prefill.html')
+
+@app.route('/createtweet_prefill', methods=['GET', 'POST'])
+def createtweet_prefill():
+    newtweet = request.get_json()
+    length = len(leads)
+    newtweet["Id"] = length
+    tweet_called=get_tweet.get_dict(newtweet["Link"])
+    print(tweet_called)
+    newtweet["Author"]=tweet_called["user"]["name"]
+    newtweet["Date"]=tweet_called["created_at"]
+    newtweet["Text"]=tweet_called["text"]
+    leads.append(newtweet)
+    link = "view/" + str(length)
+    savetweets()
+    return jsonify(link=link)
 
 @app.route('/createtweet', methods=['GET', 'POST'])
 def createtweet():
