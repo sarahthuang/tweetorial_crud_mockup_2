@@ -43,7 +43,7 @@ $(document).ready(function(){
         emptyInputFields.push({ "LeadTypes": leadtypes })
         emptyInputFields.push({ "Image": image })
         emptyInputFields.push({ "Link": link })
-        
+
         $.each(emptyInputFields, function (index, value) {
             var key = Object.keys(emptyInputFields[index])
             var val = Object.values(emptyInputFields[index])
@@ -77,7 +77,7 @@ $(document).ready(function(){
                 dataType: "json",
                 contentType: "application/json;charset=utf-8",
                 data: JSON.stringify(newtweet),
-                success: function (result) { 
+                success: function (result) {
                     view = result["link"]
                     addlink(view)
                     clearAll()
@@ -90,5 +90,5 @@ $(document).ready(function(){
                 }
             })
         }
-    }) 
+    })
 })
