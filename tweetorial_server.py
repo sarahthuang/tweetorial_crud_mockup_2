@@ -74,7 +74,7 @@ def createtweet_prefill():
     print(tweet_called)
     newtweet["Author"]=tweet_called["user"]["name"]
     newtweet["Date"]=tweet_called["created_at"]
-    newtweet["Text"]=tweet_called["text"]
+    newtweet["Text"]=tweet_called["full_text"]
     leads.append(newtweet)
     link = "view/" + str(length)
     savetweets()

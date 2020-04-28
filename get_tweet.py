@@ -13,7 +13,9 @@ t = twitter.Api(
     consumer_secret=e["CONSUMER_SECRET"],
     access_token_key=e["ACCESS_TOKEN"],
     access_token_secret=e["ACCESS_TOKEN_SECRET"],
-    sleep_on_rate_limit=True
+    sleep_on_rate_limit=True,
+    cache=None,
+    tweet_mode= 'extended'
 )
 
 
