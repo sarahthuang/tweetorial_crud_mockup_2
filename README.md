@@ -1,7 +1,7 @@
-# tweetorial_crud_mockup_2
+# Tweetorial CRUD Mockup
 
-Sarah and Jennifer
-Tweetorial Project
+Made by Sarah Huang and Jennifer Lee
+TechTweets (Tweetorial) Project with Katy Gero and Lydia Chilton
 Run flask server
 Then open page at root /
 
